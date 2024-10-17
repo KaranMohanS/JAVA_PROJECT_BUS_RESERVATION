@@ -20,5 +20,16 @@ public class user {
         this.address=address;
     }
 
-    
+    public String toString()
+    {
+        String str="";
+
+        str+="USER ID: "+this.id+"\n";
+        str+="USER NAME: "+this.name+"\n";
+        str+="USER AGE: "+this.age+"\n";
+        str+="EMAIL: "+this.email+"\n";
+        str+="PHONE NUMBER: "+this.ph+"\n";
+        str+="ADDRESS: "+this.address+"\n";
+        return str;
+    }
 }
