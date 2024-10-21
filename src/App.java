@@ -25,6 +25,7 @@ public class App {
        b2.addbus(b2.getBusId(), b2.getName(), b2.getBusPH(), b2.getType(), b2.getDestination(), l, "12-06-2024", b2.getTime());
        
        b2.buslist();
+       System.out.println("----------------------");
        
     }
 }
