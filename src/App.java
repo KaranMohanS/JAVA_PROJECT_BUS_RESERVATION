@@ -23,9 +23,9 @@ public class App {
        b.addbus(b.getBusId(), b.getName(), b.getBusPH(), b.getType(), b.getDestination(), b.getSeat(),"12-06-2024", b.getTime());
        bus b2=new bus(102, "city", 9360728854l, "sleeper", "chennai", l, "9.00 pm");
        b2.addbus(b2.getBusId(), b2.getName(), b2.getBusPH(), b2.getType(), b2.getDestination(), l, "12-06-2024", b2.getTime());
-       
-       b2.buslist();
+                    
+       b2.buslist();                  
        System.out.println("----------------------");
-       
+                                                    
     }
 }

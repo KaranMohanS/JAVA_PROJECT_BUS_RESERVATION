@@ -1,35 +1,24 @@
 package com.user;
 
-public class user {
+
+public class user{
+
+    private int userId;
+    private String userName;
+    private int age;
+    private String email;
+    private Long phoneNumber;
     
-    int id;
-    String name;
-    int age;
-    String email;
-    long ph;
-    String address;
-
-
-    public user(int id,String name,int age,String email,long ph,String address)
+    
+    public user(int userId,String userName,int age,String email,Long phoneNumber)
     {
-        this.id=id;
-        this.name=name;
+        this.userId=userId;
+        this.userName=userName;
         this.age=age;
         this.email=email;
-        this.ph=ph;
-        this.address=address;
+        this.phoneNumber=phoneNumber;
     }
 
-    public String toString()
-    {
-        String str="";
-
-        str+="USER ID: "+this.id+"\n";
-        str+="USER NAME: "+this.name+"\n";
-        str+="USER AGE: "+this.age+"\n";
-        str+="EMAIL: "+this.email+"\n";
-        str+="PHONE NUMBER: "+this.ph+"\n";
-        str+="ADDRESS: "+this.address+"\n";
-        return str;
-    }
+    
+    
 }
