@@ -19,6 +19,44 @@ public class user{
         this.phoneNumber=phoneNumber;
     }
 
+
+    public int getUserId() {
+        return userId;
+    }
+
+
+    public String getUserName() {
+        return userName;
+    }
+
+
+    public int getAge() {
+        return age;
+    }
+
+
+    public String getEmail() {
+        return email;
+    }
+
+
+    public Long getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    
+    
+    public String toString()
+    {
+        String str="";
+        str+="USER ID: "+this.userId+"\n";
+        str+="USER NAME: "+this.userName+"\n";
+        str+="AGE: "+this.age+"\n";
+        str+="EMAIL: "+this.email+"\n";
+        str+="PHONE NUMBER: "+this.phoneNumber+"\n";
+        return str;
+    }
+
     
     
 }
