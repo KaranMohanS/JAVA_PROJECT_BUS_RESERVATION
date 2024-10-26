@@ -18,6 +18,8 @@ public class seat {
         str+="AVAILABLE: "+this.isavailable;
         return str;
     }
+    
 
+    
 
 }

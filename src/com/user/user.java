@@ -29,17 +29,17 @@ public class user{
         return userName;
     }
 
-
+    
     public int getAge() {
         return age;
     }
 
-
+    
     public String getEmail() {
         return email;
     }
 
-
+    
     public Long getPhoneNumber() {
         return phoneNumber;
     }
@@ -58,5 +58,5 @@ public class user{
     }
 
     
-    
+ 
 }

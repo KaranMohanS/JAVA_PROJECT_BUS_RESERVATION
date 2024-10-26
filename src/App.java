@@ -11,6 +11,11 @@ public class App {
         
        user u=new user(1, "karan", 23, "karan@gmail.com", 9360728854l);
        System.out.println(u);
-                                                    
+
+       bus b=new bus(101, "karan travels", 50, "sivagasi");
+       System.out.println(b);
+       
+
+                                                               
     }
 }
