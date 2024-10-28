@@ -54,8 +54,8 @@ public class bus{
         str+="CAPACITY: "+this.capacity+"\n";
         str+="ROUTE: "+this.route+"\n";
         str+="ISAVAILABLE: "+this.isSeatAvailable+"\n";
+        System.out.println("--------------------------------");
         return str;
-
     }
 
     
