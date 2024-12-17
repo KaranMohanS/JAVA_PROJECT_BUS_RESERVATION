@@ -1,21 +1,25 @@
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Scanner;
 
-import com.Bus.bus;
-import com.Seat.seat;
 import com.user.user;
 
+
 public class App {
-    public static void main(String[] args) throws Exception {
-        System.out.println("Hello, World!");
+
+
+    public static void main(String[] args) {
         
-       user u=new user(1, "karan", 23, "karan@gmail.com", 9360728854l);
-       System.out.println(u);
-
-       bus b=new bus(101, "karan travels", 50, "sivagasi");
-       System.out.println(b);
        
+        user u2=new user("karan", 9360728854l, "karan@gmail.com");
+        user.addUser(u2);
+        user u1=new user("mohan", 9360728854l, "mohan@gmail.com");
+        user.addUser(u1);
+        
 
-                                                               
+        user.getUser(2);
+       // user.deleteUser(2);
+        user.printUsers();
+        user.updateUser(1);
+        user.printUsers();
+
     }
 }
