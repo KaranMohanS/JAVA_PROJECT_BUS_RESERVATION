@@ -1,5 +1,7 @@
 import java.util.Scanner;
 
+import com.Bus.bus;
+import com.Route.route;
 import com.user.user;
 
 
@@ -14,12 +16,11 @@ public class App {
         user u1=new user("mohan", 9360728854l, "mohan@gmail.com");
         user.addUser(u1);
         
-
-        user.getUser(2);
-       // user.deleteUser(2);
         user.printUsers();
-        user.updateUser(1);
-        user.printUsers();
+        route r1=new route(101, "sirumugai", "coimbatore", 31);
+        bus b1=new bus(1001, "SRT", 60, 60, r1);
 
+        System.out.println(b1);
+       
     }
 }
