@@ -9,18 +9,23 @@ public class bus {
 
     public static List<bus> lb=new ArrayList();
 
-    public void addBus(bus b)
+    public void addBus(bus bus)
     {
-        lb.add(b);
+       lb.add(bus);
+    }
+    
+    public void printBus()
+    {
+        System.out.println(lb);
     }
 
-
-
+    
+//-----------------------------------------
     private int busID;
     private String busName;
     private int capcity;
     private int availableseat;
-    route re;
+    private route re;
 
     public bus(int busID,String busName,int capcity,int availableseat,route re)
     {
@@ -84,7 +89,13 @@ public class bus {
         return str;
     }
 
-
+    public  void bookSeat() {
+        if (availableseat > 0) {
+            availableseat--;
+        } else {
+            System.out.println("No available seats.");
+        }
+    }
 
 
 }

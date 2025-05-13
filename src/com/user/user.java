@@ -3,13 +3,14 @@ package com.user;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+import com.App;
 
 public class user {
 
     public static List<user> uList = new ArrayList<>();
-    public static Scanner scan = new Scanner(System.in);
+    //public static Scanner scan = new Scanner(System.in);
 
-    public static void addUser(user u) {
+    public  void addUser(user u) {
         int id = uList.size() + 1;
         u.setUID(id);
         uList.add(u);
@@ -39,8 +40,8 @@ public class user {
 
     public static void updateUser(int id) {
         System.out.println("enter : 1 name || 2 contect || 3 email");
-        int option = scan.nextInt();
-        scan.nextLine();
+        int option = App.scan.nextInt();
+        App.scan.nextLine();
 
         for (user x : uList) {
             if (x.getUID() == id) {
@@ -48,20 +49,20 @@ public class user {
                     case 1:
 
                         System.out.println("Enter new name");
-                        String name = scan.nextLine();
+                        String name = App.scan.nextLine();
                         x.setName(name);
                         break;
                     case 2:
 
                         System.out.println("Enter new contect");
-                        long ph = scan.nextLong();
-                        scan.nextLine();
+                        long ph = App.scan.nextLong();
+                        App.scan.nextLine();
                         x.setContect(ph);
                         break;
                     case 3:
 
                         System.out.println("Enter new email");
-                        String em = scan.nextLine();
+                        String em = App.scan.nextLine();
                         x.setEmail(em);
                         break;
 
@@ -82,6 +83,15 @@ public class user {
     String email;
 
     public user(String name, long contect, String email) {
+        this.name = name;
+        this.contect = contect;
+        this.email = email;
+    }
+
+    
+
+    public user(int uID, String name, long contect, String email) {
+        UID = uID;
         this.name = name;
         this.contect = contect;
         this.email = email;
