@@ -1,6 +1,7 @@
 package com.user;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Scanner;
 import com.App;
@@ -8,9 +9,9 @@ import com.App;
 public class user {
 
     public static List<user> uList = new ArrayList<>();
-    //public static Scanner scan = new Scanner(System.in);
+    // public static Scanner scan = new Scanner(System.in);
 
-    public  void addUser(user u) {
+    public void addUser(user u) {
         int id = uList.size() + 1;
         u.setUID(id);
         uList.add(u);
@@ -30,21 +31,34 @@ public class user {
         }
     }
 
-    public static void deleteUser(int id) {
-        for (user x : uList) {
+    public static void deleteUser(int id) throws Exception {
+
+        Iterator<user> iterator = uList.iterator();
+        boolean found = false;
+
+        while (iterator.hasNext()) {
+            user x = iterator.next();
+
             if (x.getUID() == id) {
-                uList.remove(id);
+                found = true;
+                iterator.remove();
+                System.out.println("user id deleted");
+                break;
             }
+        }
+        if (!found) {
+            throw new Exception("invalid user id");
         }
     }
 
-    public static void updateUser(int id) {
-        System.out.println("enter : 1 name || 2 contect || 3 email");
-        int option = App.scan.nextInt();
-        App.scan.nextLine();
-
+    public static void updateUser(int id)throws Exception {
+        boolean found = false;
         for (user x : uList) {
             if (x.getUID() == id) {
+                found = true;
+                System.out.println("enter : 1 name || 2 contect || 3 email");
+                int option = App.scan.nextInt();
+                App.scan.nextLine();
                 switch (option) {
                     case 1:
 
@@ -67,28 +81,30 @@ public class user {
                         break;
 
                     default:
-                        System.out.println("Invalied Option");
+                        System.out.println("Invalid Option");
                         break;
                 }
+                break;
             }
         }
-
+        if(!found)
+        {
+            throw new Exception("invalid user id");
+        }
     }
 
     // ---------------------------------------------------------
 
-    int UID;
-    String name;
-    long contect;
-    String email;
+    private int UID;
+    private String name;
+    private long contect;
+    private String email;
 
     public user(String name, long contect, String email) {
         this.name = name;
         this.contect = contect;
         this.email = email;
     }
-
-    
 
     public user(int uID, String name, long contect, String email) {
         UID = uID;

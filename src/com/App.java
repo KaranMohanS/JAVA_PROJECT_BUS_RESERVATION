@@ -1,5 +1,4 @@
 package com;
-import java.io.IOException;
 import java.util.Scanner;
 
 
@@ -15,7 +14,7 @@ public class App {
 
    public static Scanner scan=new Scanner(System.in);
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws Exception {
         
         
        /*  user u2=new user("karan", 9360728854l, "karan@gmail.com");
@@ -40,17 +39,25 @@ public class App {
        //userService.getUser();
        //userService.deleteUser();
        
-       user u=new user("karan", 9360728854l, "karan@gmail.com");
-       u.addUser(u);
-       route r=new route("sirumugai", "chennai", 200,369.0);
+       //user u=new user("karan", 9360728854l, "karan@gmail.com");
+       //u.addUser(u);
+       /*route r=new route("sirumugai", "chennai", 200);
        r.addRoute(r);
-       //r.viewRoute();
-       bus b=new bus(1, "karan", 50, 20,r );
-       b.addBus(b);
-       //b.printBus();
+       route r1=new route("cbe", "bangalore", 365);
+       route r2=new route("madurai", "dheli", 1234);
+       r1.addRoute(r1);
+       r2.addRoute(r2);
+       route.viewRoute();
 
-      Booking.addBooking(u, b, 13, 234, "17-06-2002","ac" );
-      Booking.viewBokking();
+       route.getRoute(4);*/
+       route r1=new route("cbe", "bangalore", 365);
+       bus b=new bus(1, "karan", 50, 20, r1);
+       b.addBus(b);
+       bus.viewBus();
+       bus.getBus(3);
+
+      //Booking.addBooking(u, b, 13, 234, "17-06-2002","ac" );
+      //Booking.viewBokking();
        
     }
 }

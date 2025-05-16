@@ -1,36 +1,118 @@
 package com.Route;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
+import java.util.Scanner;
+
+import com.App;
 
 public class route {
 
-    public static List<route> lr=new ArrayList<>();
+    public static List<route> lr = new ArrayList<>();
 
-    public  void addRoute(route r)
-    {
-        int id=lr.size()+1;
+    public void addRoute(route r) {
+        int id = lr.size() + 1;
         r.setRouteID(id);
         lr.add(r);
     }
 
-    public void viewRoute()
-    {
-        System.out.println(lr);
+    public static void viewRoute() {
+        for (route x : lr) {
+            System.out.println(x);
+        }
     }
+
+    public static void getRoute(int n) {
+        boolean find = false;
+        for (route x : lr) {
+            if (x.getRouteID() == n) {
+                System.out.println(x);
+                find = true;
+                break;
+            }
+        }
+        if (!find) {
+            System.out.println("Route ID Not Available: " + n);
+        }
+    }
+
+    public static void updateRoute(int n) throws Exception {
+        boolean find = false;
+
+        for (route x : lr) {
+            if (x.getRouteID() == n) {
+                find = true;
+
+                System.out.println("Enter your option| 1 start point | 2 ending point | 3 distance ");
+                int option = App.scan.nextInt();
+                App.scan.nextLine();
+
+                switch (option) {
+                    case 1:
+                        System.out.println("enter your new starting point");
+                        String startPoint = App.scan.nextLine();
+                        x.setSp(startPoint);
+                        break;
+
+                    case 2:
+
+                        System.out.println("enter your new ending point");
+                        String endPoint = App.scan.nextLine();
+                        x.setEp(endPoint);
+                        break;
+
+                    case 3:
+
+                        System.out.println("enter your new distance");
+                        double distance = App.scan.nextDouble();
+                        App.scan.nextLine();
+                        x.setDistance(distance);
+                        break;
+
+                    default:
+                        throw new Exception("invalid option" + option);
+                }
+                break;
+            }
+        }
+        if (!find) {
+            throw new Exception("invalid route id" + n);
+        }
+    }
+
+    public static void deleteRoute(int n) {
+
+        Iterator<route> iterator = lr.iterator();
+        boolean found = false;
+
+        while (iterator.hasNext()) {
+            route x = iterator.next();
+            if (x.getRouteID() == n) {
+                iterator.remove(); // Safe removal
+                found = true;
+                System.out.println("Route deleted.");
+                break;
+            }
+        }
+
+        if (!found) {
+            System.out.println("Route not found.");
+        }
+    }
+    // -------------------------------------------------
 
     private int routeID;
     private String sp;
     private String ep;
     private double distance;
-   
 
-    public route(String sp, String ep, double distance, double cost) {
-        //this.routeID = routeID;
+    public route(String sp, String ep, double distance) {
+        // this.routeID = routeID;
         this.sp = sp;
         this.ep = ep;
         this.distance = distance;
-       // this.cost=cost;
+        // this.cost=cost;
     }
 
     public int getRouteID() {
@@ -65,15 +147,13 @@ public class route {
         this.distance = distance;
     }
 
-
-    public String toString()
-    {
-        String str="";
-        str+="ROUTE ID: "+this.routeID+"\n";
-        str+="STRATING POINT: "+this.sp+"\n";
-        str+="ENDING POINT: "+this.ep+"\n";
-        str+="DISTANCE: "+this.distance+"KM\n";
-       // str+="COST: "+this.cost+"RS\n";
+    public String toString() {
+        String str = "";
+        str += "ROUTE ID: " + this.routeID + "\n";
+        str += "STRATING POINT: " + this.sp + "\n";
+        str += "ENDING POINT: " + this.ep + "\n";
+        str += "DISTANCE: " + this.distance + "KM\n";
+        // str+="COST: "+this.cost+"RS\n";
 
         return str;
 

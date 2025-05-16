@@ -26,7 +26,6 @@ public class userService{
         try {
             addUser(u);
         } catch (IOException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
     }
