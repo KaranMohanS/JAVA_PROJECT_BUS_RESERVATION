@@ -76,7 +76,7 @@ public abstract class booking {
         str += "BOOKING ID: " + this.bID + "\n";
         str += "PASSANGER DETAILS: [" + this.u.toString() + "]\n";
         str += "BUS DETAILS: [" + this.b.toString() + "]\n";
-        str += "SEAT NO: " + this.seatNO + "\n";
+        str += "NUMBER OF SEATS: " + this.seatNO + "\n";
         str += "SEAT TYPE: " + this.seatType + "\n";
         str += "COST: " + this.cost + "\n";
 

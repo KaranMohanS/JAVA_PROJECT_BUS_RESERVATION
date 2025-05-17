@@ -30,7 +30,8 @@ public class Booking extends booking {
         Booking b1 = new Booking(u, b, seatNO, seatType, totalcost);
         int bId = m.size() + 1;
         b1.setbID(bId);
-
+        int numberOfSeats = b.getAvailableseat() - seatNO;
+        b.setAvailableseat(numberOfSeats);
         if (m.get(date) == null) {
             m.put(date, new ArrayList<>());
         }

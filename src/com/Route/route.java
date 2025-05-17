@@ -12,7 +12,7 @@ public class route {
     public static List<route> lr = new ArrayList<>();
 
     public void addRoute(route r) {
-        int id = lr.size() + 1;
+        int id = lr.size() + 100;
         r.setRouteID(id);
         lr.add(r);
     }
@@ -113,6 +113,13 @@ public class route {
         this.ep = ep;
         this.distance = distance;
         // this.cost=cost;
+    }
+
+    public route(int routeID, String sp, String ep, double distance) {
+        this.routeID = routeID;
+        this.sp = sp;
+        this.ep = ep;
+        this.distance = distance;
     }
 
     public int getRouteID() {
