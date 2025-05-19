@@ -16,6 +16,12 @@ public class Booking extends booking {
         super(u, b, seatNO, seatType, cost);
     }
 
+    public Booking(int bID, user u, bus b, int seatNO, String seatType, double cost) {
+        super(bID,u,b,seatNO,seatType,cost);
+    }
+
+    
+
     @Override
 
     public void confirmBooking() {

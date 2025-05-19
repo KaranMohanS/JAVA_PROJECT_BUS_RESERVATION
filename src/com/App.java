@@ -2,12 +2,14 @@ package com;
 
 import java.util.Scanner;
 
+import com.Bus.BusService;
 import com.Bus.bus;
 import com.Route.RouteService;
 import com.Route.route;
 import com.user.user;
 import com.user.userService;
 import com.Booking.Booking;
+import com.Booking.BookingService;
 import com.Booking.booking;
 
 public class App {
@@ -68,9 +70,9 @@ public class App {
       // RouteService.getRoute();
       // RouteService.deleteRoute();
       // RouteService.updateRoute();
-         
-         userService.viewUser();
-         userService.updateUser();
-         userService.viewUser();
+      //Booking booking=new Booking(1, userService.addUser(), BusService.addBus(), 13, "ac", 200);
+      //BookingService.addBooking(booking);
+      BookingService.addBooking();
+        
    }
 }

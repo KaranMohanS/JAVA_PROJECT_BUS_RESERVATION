@@ -9,7 +9,6 @@ import com.user.user;
 
 public abstract class booking {
 
-
     protected int bID;
     protected user u;
     protected bus b;
@@ -18,7 +17,7 @@ public abstract class booking {
     protected double cost;
 
     public booking(user u, bus b, int seatNO, String seatType, double cost) {
-        //this.bID = bID;
+        // this.bID = bID;
         this.u = u;
         this.b = b;
         this.seatNO = seatNO;
@@ -26,11 +25,20 @@ public abstract class booking {
         this.cost = cost;
     }
 
-   // public abstract void addBooking(user u, bus b, int seatNO, double cost, String date, String seatType); 
+    // public abstract void addBooking(user u, bus b, int seatNO, double cost,
+    // String date, String seatType);
+
+    public booking(int bID, user u, bus b, int seatNO, String seatType, double cost) {
+        this.bID = bID;
+        this.u = u;
+        this.b = b;
+        this.seatNO = seatNO;
+        this.seatType = seatType;
+        this.cost = cost;
+    }
 
     public abstract void confirmBooking();
 
-   
     public int getbID() {
         return bID;
     }
@@ -63,6 +71,14 @@ public abstract class booking {
         this.seatNO = seatNO;
     }
 
+    public String getSeatType() {
+        return seatType;
+    }
+
+    public void setSeatType(String seatType) {
+        this.seatType = seatType;
+    }
+
     public double getCost() {
         return cost;
     }
@@ -83,8 +99,4 @@ public abstract class booking {
         return str;
     }
 
-  
-  
 }
-
-

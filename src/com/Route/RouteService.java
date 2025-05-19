@@ -21,14 +21,20 @@ public class RouteService {
         System.out.println("Enter Starting Point");
         String StartingPoint = App.scan.nextLine();
 
+        System.out.println("Enter Starting Time");
+        String StartingTime = App.scan.nextLine();
+
         System.out.println("Enter Ending Point");
         String EndingPoint = App.scan.nextLine();
+
+        System.out.println("Enter Endig Time");
+        String EndingTime = App.scan.nextLine();
 
         System.out.println("Enter Distance");
         double Distance = App.scan.nextDouble();
         App.scan.nextLine();
 
-        route r = new route(routeID, StartingPoint, EndingPoint, Distance);
+        route r = new route(routeID, StartingPoint, StartingTime, EndingPoint, EndingTime, Distance);
 
         addRoute(r);
 
@@ -38,7 +44,8 @@ public class RouteService {
 
         File file = new File(path);
         try (BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(file, true))) {
-            bufferedWriter.write(r.getRouteID() + "," + r.getSp() + "," + r.getEp() + "," + r.getDistance() + "\n");
+            bufferedWriter.write(r.getRouteID() + "," + r.getSp() + "," + r.getStartTime() + "," + r.getEp() + ","
+                    + r.getEndTime() + "," + r.getDistance() + "\n");
             System.out.println("Route Added");
             bufferedWriter.close();
         } catch (Exception e) {
@@ -75,9 +82,9 @@ public class RouteService {
             while ((line = bufferedReader.readLine()) != null) {
 
                 String[] arr = line.split(",");
-                if (arr.length == 4) {
-                    System.out.println("Route ID: " + arr[0] + ", Start: " + arr[1] +
-                            ", End: " + arr[2] + ", Distance: " + arr[3] + " km");
+                if (arr.length == 6) {
+                    System.out.println("Route ID: " + arr[0] + ", Start: " + arr[1] + ", Starting Time: " + arr[2] +
+                            ", End: " + arr[3] + ", Ending Time: " + arr[4] + ", Distance: " + arr[5]);
                 }
             }
             bufferedReader.close();
@@ -103,8 +110,8 @@ public class RouteService {
                 String[] arr = line.split(",");
 
                 if (Integer.parseInt(arr[0]) == routeID) {
-                    System.out.println("Route ID: " + arr[0] + ", Start: " + arr[1] +
-                            ", End: " + arr[2] + ", Distance: " + arr[3] + " km");
+                    System.out.println("Route ID: " + arr[0] + ", Start: " + arr[1] + ", Starting Time: " + arr[2] +
+                            ", End: " + arr[3] + ", Ending Time: " + arr[4] + ", Distance: " + arr[5]);
                     found = true;
                     break;
                 }
