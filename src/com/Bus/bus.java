@@ -3,9 +3,7 @@ package com.Bus;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
-
 import com.App;
-import com.Booking.booking;
 import com.Route.route;
 
 public class bus {
@@ -102,24 +100,22 @@ public class bus {
             throw new Exception("Invalid Bus ID" + id);
         }
     }
-    
-    public static void checkAvailableSeats(int id)
-    {
-         boolean found=false;
 
-         for(bus x:lb)
-         {
-            if(x.getBusID()==id)
-            {
-                System.out.println("Available Seats:"+x.getAvailableseat());
+    public static void checkAvailableSeats(int id) {
+        boolean found = false;
+
+        for (bus x : lb) {
+            if (x.getBusID() == id) {
+                System.out.println("Available Seats:" + x.getAvailableseat());
                 break;
             }
-         }
+        }
 
-         if (!found) {
-            System.out.println("Invalid Bus ID: "+id);
-         }
+        if (!found) {
+            System.out.println("Invalid Bus ID: " + id);
+        }
     }
+
     // -----------------------------------------
     private int busID;
     private String busName;
@@ -180,12 +176,10 @@ public class bus {
 
         str += "BUS ID: " + this.busID + "\n";
         str += "BUS NAME: " + this.busName + "\n";
-        //str += "CAPACITY: " + this.capcity + "\n";
-        //str += "AVAILABLE SEAT: " + this.availableseat + "\n";
+        // str += "CAPACITY: " + this.capcity + "\n";
+        // str += "AVAILABLE SEAT: " + this.availableseat + "\n";
         str += "BUS ROUTE: " + re.toString() + "\n";
         return str;
     }
-
-    
 
 }
