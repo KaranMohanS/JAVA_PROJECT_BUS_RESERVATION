@@ -77,7 +77,7 @@ public class App {
      //UserDataBaseService.addUser();
 
      UserDataBaseService.viewUser();
-     UserDataBaseService.getUser();
+     //UserDataBaseService.deleteUser();
         
    }
 }
