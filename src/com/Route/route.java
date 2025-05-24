@@ -107,6 +107,7 @@ public class route {
     private String ep;
     private String endTime;
     private double distance;
+    private String date;
 
     public route(String sp, String ep, double distance) {
         // this.routeID = routeID;
@@ -115,7 +116,7 @@ public class route {
         this.distance = distance;
         // this.cost=cost;
     }
-
+    
     public route(int routeID, String sp, String startTime, String ep, String endTime, double distance) {
         this.routeID = routeID;
         this.sp = sp;
@@ -123,6 +124,16 @@ public class route {
         this.ep = ep;
         this.endTime = endTime;
         this.distance = distance;
+    }
+
+    public route(int routeID, String sp, String startTime, String ep, String endTime, double distance, String date) {
+        this.routeID = routeID;
+        this.sp = sp;
+        this.startTime = startTime;
+        this.ep = ep;
+        this.endTime = endTime;
+        this.distance = distance;
+        this.date=date;
     }
 
     public int getRouteID() {
