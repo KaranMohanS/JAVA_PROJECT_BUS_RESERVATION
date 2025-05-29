@@ -80,4 +80,62 @@ public class RouteDataBaseSerivece {
         }
     }
 
+    public static void getRoute() {
+        System.out.println("Enter Route ID");
+        int routeID = App.scan.nextInt();
+        App.scan.nextLine();
+
+        String query = "select * from Route where routeID=?";
+
+        try (Connection connection = DataBaseConnection.getConnection();
+                PreparedStatement p = connection.prepareStatement(query)) {
+            p.setInt(1, routeID);
+            ResultSet rs = p.executeQuery();
+            if (rs.next()) {
+                System.out.println("Route ID: " + rs.getInt(1));
+                System.out.println("Starting Point: " + rs.getString(2));
+                System.out.println("Starting Time: " + rs.getString(3));
+                System.out.println("ending Point: " + rs.getString(4));
+                System.out.println("ending Time: " + rs.getString(5));
+                System.out.println("Distance: " + rs.getDouble(6));
+                System.out.println("Date: " + rs.getString("date"));
+            } else {
+                System.err.println("Route ID Invalid: " + routeID);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void deleteRoute() {
+        System.out.println("Enter Route ID");
+        int routeID = App.scan.nextInt();
+        App.scan.nextLine();
+
+        String deleteBusQuery = "DELETE FROM Bus WHERE routeID = ?";
+        String deleteRouteQuery = "DELETE FROM Route WHERE routeID = ?";
+
+        try (Connection connection = DataBaseConnection.getConnection()) {
+            // First delete buses with this route
+            try (PreparedStatement busStmt = connection.prepareStatement(deleteBusQuery)) {
+                busStmt.setInt(1, routeID);
+                busStmt.executeUpdate();
+            }
+
+            // Then delete the route
+            try (PreparedStatement routeStmt = connection.prepareStatement(deleteRouteQuery)) {
+                routeStmt.setInt(1, routeID);
+                int row = routeStmt.executeUpdate();
+                if (row > 0) {
+                    System.out.println("Route deleted successfully.");
+                } else {
+                    System.out.println("Route ID not found.");
+                }
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
 }

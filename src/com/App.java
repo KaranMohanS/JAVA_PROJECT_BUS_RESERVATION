@@ -82,12 +82,15 @@ public class App {
 
       // UserDataBaseService.viewUser();
       // UserDataBaseService.deleteUser();
-     // RouteDataBaseSerivece.addRoute();
-     // RouteDataBaseSerivece.viewRoutes();
-        
-      //  BusDataBaseService.addBus();
-     // BusDataBaseService.viewBuses();
-     BookingDataBaseService.addBooking();
+      // RouteDataBaseSerivece.addRoute();
+      // RouteDataBaseSerivece.viewRoutes();
+
+      // BusDataBaseService.addBus();
+      // BusDataBaseService.viewBuses();
+      // BookingDataBaseService.addBooking();
+     // BookingDataBaseService.viewBokkings();
+     RouteDataBaseSerivece.viewRoutes();
+     RouteDataBaseSerivece.deleteRoute();
 
    }
 }
