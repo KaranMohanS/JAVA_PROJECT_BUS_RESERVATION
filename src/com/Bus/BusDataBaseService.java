@@ -63,9 +63,7 @@ public class BusDataBaseService {
                 System.out.println("Route ID: " + rs.getInt(5));
 
             }
-            connection.close();
-            statement.close();
-            rs.close();
+            
         } catch (Exception e) {
             e.printStackTrace();
         }
